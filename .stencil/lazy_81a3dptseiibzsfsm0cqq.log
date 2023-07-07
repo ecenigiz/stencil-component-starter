@@ -1,0 +1,22 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import { format } from "../../utils/utils";
+export const MyComponent = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.initialValue = 1;
+        this.amountOfIncrease = 5;
+    }
+    componentWillLoad() {
+        this.value = this.initialValue;
+    }
+    getText() {
+        return format(this.first, this.last);
+    }
+    render() {
+        return (h("div", null, "Hello, World! I'm ", this.getText())
+            ,
+                h("p", null, h("button", { onClick: () => this.azalt() }, "Azalt"), h("span", { className: "sonuc" }, this.deger), h("button", { onClick: () => this.artir() }, "Art\u0131r")));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:my-component"; }
+};
